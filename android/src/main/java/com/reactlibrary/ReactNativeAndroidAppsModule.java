@@ -65,6 +65,7 @@ public class ReactNativeAndroidAppsModule extends ReactContextBaseJavaModule {
                         if(!shouldFilterApp(appList, packageInfo.packageName)) {
                             WritableMap applicationInfo = Arguments.createMap();
                             
+                            applicationInfo.putString("applicationName", packageInfo.applicationInfo.loadLabel(packageManager).toString());
                             applicationInfo.putString("packageName", packageInfo.packageName);
                             applicationInfo.putString("versionName", packageInfo.versionName);
                             applicationInfo.putDouble("versionCode", packageInfo.versionCode);
